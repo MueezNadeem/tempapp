@@ -28,9 +28,17 @@ import classes from './Week1.module.css';
 
 interface Props {
   className?: string;
+  setPage: (newPage: number) => void;
 }
+
+
 /* @figmaId 0:215 */
-export const Week1: FC<Props> = memo(function Week1(props = {}) {
+export const Week1: FC<Props> = memo(function Week1({setPage}) {
+const handleClick = () => {
+  console.log("test")
+    setPage(2); // Update the current page to 2
+  };
+
   return (
     <div className={`${resets.storybrainResets} ${classes.root}`}>
       <div className={classes.group1}>
@@ -55,8 +63,7 @@ export const Week1: FC<Props> = memo(function Week1(props = {}) {
         <div className={classes.textBlock2}>
           Over the next week, we will be practicing the different elements of story writing.
         </div>
-        <div className={classes.textBlock3}>Our</div>
-        <div className={classes.textBlock4}>aim is to make stories more interesting and exciting.</div>
+        <div className={classes.textBlock3}>Our aim is to make stories more interesting and exciting.</div>
       </div>
       <div className={classes.youMustBeFamiliarWithSomeOfThe}>
         You must be familiar with some of these. If not, do not worry! we will cover all these elements as we go along.
@@ -78,13 +85,11 @@ export const Week1: FC<Props> = memo(function Week1(props = {}) {
         <Group925Icon className={classes.icon6} />
       </div>
       <div className={classes.thereAreElementsWhichMakeTheFo}>
-        There are elements which make the foundation for story writing. An element is an essential part of something and
+        There are five elements which make the foundation for story writing. An element is an essential part of something and
         every fiction story has the same key elements:
       </div>
-      <div className={classes.layer_7}>
-        <Layer_7Icon className={classes.icon7} />
-      </div>
-      <div className={classes.layer_72}>
+
+      <div className={classes.layer_72}  >
         <Layer_7Icon2 className={classes.icon8} />
       </div>
       <div className={classes.rectangle8}></div>
@@ -98,6 +103,11 @@ export const Week1: FC<Props> = memo(function Week1(props = {}) {
       <div className={classes.group313}>
         <Group313Icon className={classes.icon10} />
       </div>
+
+        <div className={classes.layer_7}   >
+        <Layer_7Icon className={classes.icon7} onClick={handleClick} />
+      </div>
+    
       <div className={classes.vector2}>
         <VectorIcon2 className={classes.icon11} />
       </div>
@@ -108,7 +118,7 @@ export const Week1: FC<Props> = memo(function Week1(props = {}) {
       <div className={classes.group599}>
         <Group599Icon className={classes.icon13} />
       </div>
-      <div className={classes.five}>five</div>
+      {/* <div className={classes.five}>five</div> */}
       <div className={classes.frame}>
         <div className={classes.group}>
           <GroupIcon className={classes.icon14} />
